@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/lightbox.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4 offset-4">
+                <input id="soafInputK" class="form-control" type="text" placeholder="Enter K" />
+            </div>
+        </div>
+
+        
+
+        <div class="row" id="soafInputs">
+
+            <div class="col">
+                <input id="soafInput1" class="form-control" placeholder="Enter Number 1" type="text" />
+            </div>
+
+            <div class="col">
+                <input id="soafInput2" class="form-control" placeholder="Enter Number 2" type="text" />
+            </div>
+
+            <div class="col">
+                <input id="soafInput3" class="form-control" placeholder="Enter Number 3" type="text" />
+            </div>
+
+            <div class="col">
+                <input id="soafInput4" class="form-control" placeholder="Enter Number 4" type="text" />
+            </div>
+
+            <div class="col">
+                <input id="soafInput5" class="form-control" placeholder="Enter Number 5" type="text" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3 offset-6">
+                <button type="button" class="btn btn-warning" id="soafbtn">Run!!</button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-warning" id="soafClrBtn">Clear</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <p id="soafOutput"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/lightbox.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/jquery.mixitup.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/typed.js"></script>
+    <script src="assets/js/skill.bar.js"></script>
+    <script src="assets/js/fact.counter.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        $("#soafbtn").on("click", function () {
+            let k = Number($("#soafInputK").val());
+
+            let mysoafArray = [];
+            mysoafArray.push(Number($("#soafInput1").val()));
+            mysoafArray.push(Number($("#soafInput2").val()));
+            mysoafArray.push(Number($("#soafInput3").val()));
+            mysoafArray.push(Number($("#soafInput4").val()));
+            mysoafArray.push(Number($("#soafInput5").val()));
+
+            
+            let target = 0
+            let found = false;
+
+            //loop over each item in the array 1 at a time
+            for (var loop = 0; loop <= mysoafArray.length; loop++) {
+                //Determine what number you need to solve for the given K...
+                //find k - mysoafArray[index]
+                target = k - mysoafArray[loop];
+
+
+                if (mysoafArray.indexOf(target, loop + 1) > 0) {
+                    found = true;
+                    break;
+                }
+            }
+            if (found)
+                $("#soafOutput").html(`A K value of ${k} was found in the array`);
+            else
+                $("#soafOutput").html(`A K value of ${k} was NOT found in the array`);
+        })
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

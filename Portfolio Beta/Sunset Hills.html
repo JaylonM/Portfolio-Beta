@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/lightbox.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <input id="BuildingHeight1" type="number" placeholder="Building Height 1" class="form-control" />
+            </div>
+            <div class="col">
+                <input id="BuildingHeight2" type="number" placeholder="Building Height 2" class="form-control" />
+            </div>
+            <div class="col">
+                <input id="BuildingHeight3" type="number" placeholder="Building Height 3" class="form-control" />
+            </div>
+            <div class="col">
+                <input id="BuildingHeight4" type="number" placeholder="Building Height 4" class="form-control" />
+            </div>
+            <div class="col">
+                <input id="BuildingHeight5" type="number" placeholder="Building Height 5" class="form-control" />
+            </div>
+            <div class="col">
+                <input id="BuildingHeight6" type="number" placeholder="Building Height 6" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-block" id="Sunsetbtn">Sunset!</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col offset-2">
+                <p id="SunsetOutput"></p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/lightbox.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/jquery.mixitup.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/typed.js"></script>
+    <script src="assets/js/skill.bar.js"></script>
+    <script src="assets/js/fact.counter.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+
+        $("#Sunsetbtn").on("click", function () {
+            var BuildingHeightArray = [
+                Number($("#BuildingHeight1").val()),
+                Number($("#BuildingHeight2").val()),
+                Number($("#BuildingHeight3").val()),
+                Number($("#BuildingHeight4").val()),
+                Number($("#BuildingHeight5").val()),
+                Number($("#BuildingHeight6").val())
+            ]
+
+            var HighestBuildingScanned = BuildingHeightArray[0];
+            var SeenSun = [HighestBuildingScanned];
+
+
+            for (let loop = 1; loop < BuildingHeightArray.length; loop++) {
+                if (BuildingHeightArray[loop] > HighestBuildingScanned) {
+                    HighestBuildingScanned = BuildingHeightArray[loop];
+                    SeenSun.push(HighestBuildingScanned);
+                }
+            }
+
+            $("#SunsetOutput").html(`The buildings that can see the sunset are as follows ${SeenSun}`)
+
+
+        })
+
+    </script>
+
+</body>
+</html>

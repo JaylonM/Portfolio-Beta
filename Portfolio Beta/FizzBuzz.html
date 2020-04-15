@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/lightbox.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-3">
+                <input id="FizzBuzzInput1" type="text" />
+            </div>
+
+            <div class="col-3">
+                <input id="FizzBuzzInput2" type="text" />
+            </div>
+
+            <div class="col-2">
+                <button type="button" class="btn btn-warning" id="FizzBuzzbtn">Run!!</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <p id="FizzBuzzOutput"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/lightbox.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/jquery.mixitup.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/typed.js"></script>
+    <script src="assets/js/skill.bar.js"></script>
+    <script src="assets/js/fact.counter.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+
+        $("#FizzBuzzbtn").on("click", function () {
+
+            var num1 = Number($("#FizzBuzzInput1").val());
+            var num2 = Number($("#FizzBuzzInput2").val());
+
+            var loop = 1
+            var message = []
+            while (loop <= 100) {
+                if ((loop % num1 === 0) && (loop % num2 ===0)) {
+                    message.push("FIZZBUZZ")
+                }
+                else if (loop % num1 === 0) {
+                    message.push("FIZZ")
+                }
+
+                else if (loop % num2 === 0) {
+                    message.push("BUZZ")
+                }
+                else {
+                    message.push(loop)
+                }
+
+                loop++
+
+            }
+                $("#FizzBuzzOutput").html(`Fizzes Buzzed for ${num1} and ${num2}: ${message.join(', ')}`)
+        })
+
+
+
+
+
+    </script>
+
+</body>
+<!--Input Field-->
+
+
+
+
+
+</html>
