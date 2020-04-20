@@ -14,3 +14,17 @@
     if (TacoWord === ReverseWord)
         $("#TacoCatOutput").append(`<br> Therefore, ${TacoWord} is a palindrome. Perfect symmetry!`);
 });
+
+$("#TacoCatClrBtn").on("click", function () {
+    $("#TacoCatInput").val("");
+    $("#TacoCatOutput").html("");
+})
+
+$("#TacoCatCodebtn").on("click", function () {
+    $("#TacoCatCodeOutput").toggle();
+    if ($(this).text() == "Show Code") {
+        $(this).text("Hide Code");
+    } else (
+        $(this).text("Show Code")
+    );
+})

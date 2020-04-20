@@ -25,3 +25,19 @@
     }
     $("#FizzBuzzOutput").html(`Fizzes Buzzed for ${num1} and ${num2}: ${FizzesBuzzed.join(', ')}`)
 })
+
+$("#FizzBuzzClrbtn").on("click", function () {
+    $("#FizzBuzzInput1, #FizzBuzzInput2").val("");
+    $("#FizzBuzzOutput").html("");
+})
+
+
+$("#FizzBuzzCodebtn").on("click", function () {
+    $("#FizzBuzzCodeOutput").toggle();
+    if ($(this).text() == "Show Code") {
+        $(this).text("Hide Code");
+    } else (
+        $(this).text("Show Code")
+    );
+})
+

@@ -29,3 +29,17 @@
     else
         $("#soafOutput").html(`A K value of ${k} was NOT found in the array`);
 })
+
+$("#soafClrBtn").on("click", function () {
+    $("#soafInputK, #soafInput1, #soafInput2, #soafInput3, #soafInput4, #soafInput5").val("");
+    $("#FizzBuzzOutput").html("");
+})
+
+$("#soafCodeBtn").on("click", function () {
+    $("#soafCodeOutput").toggle();
+    if ($(this).text() == "Show Code") {
+        $(this).text("Hide Code");
+    } else (
+        $(this).text("Show Code")
+    );
+})
